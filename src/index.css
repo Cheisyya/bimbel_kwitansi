@@ -1,0 +1,453 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+:root {
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --secondary: #0f172a;
+  --bg-color: #f8fafc;
+  --card-bg: #ffffff;
+  --text-main: #1e293b;
+  --border-color: #e2e8f0;
+  --receipt-blue: #1e3a8a;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Form UI Styles */
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  min-height: 100vh;
+}
+
+.form-section {
+  background: var(--card-bg);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  max-height: calc(100vh - 4rem);
+}
+
+.preview-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background-color: #f8fafc;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  background-color: #ffffff;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.radio-group {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 10px;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-weight: 400;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-print {
+  background-color: #10b981;
+  color: white;
+  align-self: flex-start;
+  box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.2);
+}
+
+.btn-print:hover {
+  background-color: #059669;
+}
+
+/* 
+  ==========================================
+  LANDSCAPE RECEIPT DESIGN
+  ========================================== 
+*/
+
+.receipt-wrapper {
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.receipt-container {
+  padding: 2.5rem 3rem;
+  background: white;
+  color: black;
+  font-family: 'Times New Roman', Times, serif;
+  position: relative;
+  border: 10px solid transparent;
+  border-image: linear-gradient(to right, var(--receipt-blue), var(--receipt-blue)) 1;
+}
+
+/* Header */
+.receipt-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  border-bottom: 2px solid var(--receipt-blue);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.receipt-logo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.receipt-header-text h2 {
+  font-size: 1.8rem;
+  color: var(--receipt-blue);
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+}
+
+.receipt-header-text p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: #333;
+  line-height: 1.4;
+}
+
+/* Title & Number */
+.receipt-title-bar {
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.receipt-title-bar h3 {
+  font-size: 1.5rem;
+  color: var(--receipt-blue);
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.receipt-no {
+  position: absolute;
+  right: 0;
+  bottom: -1rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Body (Forms) */
+.receipt-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  font-size: 1.1rem;
+}
+
+.receipt-row {
+  display: flex;
+  align-items: flex-end;
+}
+
+.receipt-label {
+  width: 180px;
+  flex-shrink: 0;
+}
+
+.receipt-value {
+  flex-grow: 1;
+  border-bottom: 1px dotted #000;
+  padding-bottom: 2px;
+  font-weight: bold;
+}
+
+.receipt-value.terbilang {
+  font-style: italic;
+  font-weight: normal;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Payment Details */
+.payment-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  border: 1px solid #000;
+  padding: 1rem;
+}
+
+.payment-type {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.checkbox-box {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #000;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.angsuran-list {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.summary-box {
+  width: 100%;
+}
+
+.summary-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.summary-table td {
+  border: 1px solid #000;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.summary-table td:last-child {
+  font-weight: bold;
+  text-align: right;
+}
+
+/* Footer & Signatures */
+.receipt-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+  padding: 0 1rem;
+}
+
+.signature-block {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+  position: relative;
+}
+
+.signature-line {
+  width: 100%;
+  border-top: 1px solid #000;
+  margin-top: 5rem;
+  padding-top: 0.25rem;
+  font-weight: bold;
+}
+
+.signature-role {
+  font-size: 0.85rem;
+  font-weight: normal;
+}
+
+/* Stamps & Images */
+.stamp-effect {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%) rotate(-15deg);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.stamp-img {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  opacity: 0.35;
+  mix-blend-mode: multiply;
+}
+
+.ttd-img {
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 80px;
+  object-fit: contain;
+  z-index: 5;
+  mix-blend-mode: multiply;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .app-container {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+}
+
+/* Print Styles - EXACT 1 PAGE FIX */
+@media print {
+
+  html,
+  body {
+    background-color: white;
+    font-size: 11.5px !important;
+    /* Diperkecil lagi agar pasti 100% muat di 1 halaman */
+    margin: 0;
+    padding: 0;
+  }
+
+  .app-container {
+    display: block;
+    padding: 0;
+    margin: 0;
+  }
+
+  .form-section,
+  .btn-print,
+  h1 {
+    display: none !important;
+  }
+
+  .receipt-wrapper {
+    box-shadow: none;
+    margin: 0;
+    width: 100%;
+    max-width: none;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .receipt-container {
+    border: none;
+    padding: 1.5rem 2.5rem;
+    /* Kurangi padding agar hemat tempat vertikal */
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .receipt-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    /* <-- INI YANG MENARIK TTD NAIK KE ATAS */
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .signature-block {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .signature-line {
+    margin-top: 8rem;
+    /* <-- DITAMBAH LAGI SESUAI PERMINTAAN */
+    padding-top: 1.25rem !important;
+    /* Jarak aman antara garis & teks nama */
+  }
+
+  .ttd-img {
+    height: 9rem;
+    /* Diperbesar ukurannya */
+    top: 2rem;
+    /* Diturunkan posisinya agar center (lebih dekat ke garis hitam) */
+  }
+
+  @page {
+    size: A4 landscape;
+    margin: 1cm;
+  }
+}
