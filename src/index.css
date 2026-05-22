@@ -323,12 +323,14 @@ select:focus {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 250px;
+  width: 45%;
+  max-width: 250px;
   position: relative;
 }
 
 .signature-line {
-  width: 100%;
+  width: 85%;
+  max-width: 220px;
   border-top: 1px solid #000;
   margin-top: 5rem;
   padding-top: 0.25rem;
@@ -360,7 +362,7 @@ select:focus {
 
 .ttd-img {
   position: absolute;
-  top: 2rem;
+  top: 3rem;
   left: 50%;
   transform: translateX(-50%);
   height: 80px;
@@ -442,7 +444,7 @@ select:focus {
   .ttd-img {
     height: 9rem;
     /* Diperbesar ukurannya */
-    top: 2rem;
+    top: 4rem;
     /* Diturunkan posisinya agar center (lebih dekat ke garis hitam) */
   }
 

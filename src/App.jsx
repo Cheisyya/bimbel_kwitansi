@@ -35,7 +35,7 @@ function App() {
       {/* Form Section */}
       <div className="form-section">
         <h1><FileEdit className="icon" /> Data Kwitansi</h1>
-        
+
         <div className="form-group">
           <label>No Kwitansi</label>
           <input type="text" name="noKwitansi" value={formData.noKwitansi} onChange={handleInputChange} />
@@ -65,19 +65,19 @@ function App() {
         <div className="grid-2">
           <div className="form-group">
             <label>Status Pembayaran</label>
-            <div className="radio-group" style={{marginTop: '10px'}}>
+            <div className="radio-group" style={{ marginTop: '10px' }}>
               <label className="radio-label">
-                <input 
-                  type="checkbox" 
-                  name="isLunas" 
-                  checked={formData.isLunas} 
-                  onChange={handleInputChange} 
+                <input
+                  type="checkbox"
+                  name="isLunas"
+                  checked={formData.isLunas}
+                  onChange={handleInputChange}
                 />
                 LUNAS (PAID)
               </label>
             </div>
           </div>
-          
+
           <div className="form-group">
             <label>Tipe Pembayaran</label>
             <select name="paymentType" value={formData.paymentType} onChange={handleInputChange}>
@@ -141,9 +141,9 @@ function App() {
               <img src="/logo.png" alt="Smart Home Center Logo" className="receipt-logo" />
               <div className="receipt-header-text">
                 <h2>SMART HOME CENTER</h2>
-                <p style={{fontWeight: 'bold'}}>BIMBINGAN BELAJAR TERPERCAYA</p>
-                <p>Jl. Pendidikan No. 21, Jakarta Selatan</p>
-                <p>Telp: 0812-3456-7890 | Email: smarthome.center@gmail.com</p>
+                <p style={{ fontWeight: 'bold' }}>BIMBINGAN BELAJAR TERPERCAYA</p>
+                <p>Mojokerto, Jawa Timur</p>
+                <p>Telp: 0813-5804-293 | Email: bimbelshc@gmail.com</p>
               </div>
             </div>
 
@@ -158,7 +158,7 @@ function App() {
                 <div className="receipt-value">{formData.terimaDari}</div>
               </div>
               <div className="receipt-row">
-                <div className="receipt-label">Uang Sejumlah:<br/>(Terbilang)</div>
+                <div className="receipt-label">Uang Sejumlah:<br />(Terbilang)</div>
                 <div className="receipt-value terbilang">
                   <span>{formData.uangSejumlah}</span>
                   <span>(Rp {formData.uangAngka},-)</span>
@@ -172,7 +172,7 @@ function App() {
 
             <div className="payment-details">
               <div className="payment-type">
-                <div className="checkbox-item" style={{marginBottom: '1rem', fontSize: '1.2rem'}}>
+                <div className="checkbox-item" style={{ marginBottom: '1rem', fontSize: '1.2rem' }}>
                   <span className="checkbox-box">{formData.isLunas ? '✔' : ''}</span>
                   <strong>LUNAS (PAID)</strong>
                 </div>
@@ -181,7 +181,7 @@ function App() {
                   <span className="checkbox-box">{formData.paymentType === 'ANGSURAN' ? 'x' : ''}</span>
                   <strong>ANGSURAN</strong>
                 </div>
-                
+
                 <div className="angsuran-list">
                   <div className="checkbox-item">
                     <span>({formData.angsuranTipe === 'DP' ? 'x' : ' '}) DP (Uang Muka)</span>
@@ -226,18 +226,18 @@ function App() {
                 </div>
                 <img src="/ttd-admin.png" alt="Tanda Tangan Admin" className="ttd-img" />
                 <div className="signature-line">
-                  {formData.penerima}<br/>
-                  <span className="signature-role">Admin / Signee name</span>
+                  {formData.penerima}<br />
+                  <span className="signature-role">Pemilik Bimbel SHC</span>
                 </div>
               </div>
 
               <div className="signature-block">
                 {/* Tambahkan div transparan/kosong agar sejajar secara struktural dengan lokasiTanggal di kiri */}
-                <div style={{visibility: 'hidden'}}>Lokasi</div>
+                <div style={{ visibility: 'hidden' }}>Lokasi</div>
                 <div>Penyetor,</div>
                 <div className="signature-line">
-                  {formData.penyetor}<br/>
-                  <span className="signature-role">Signee name</span>
+                  {formData.penyetor}<br />
+                  <span className="signature-role">Orang Tua / Wali Siswa</span>
                 </div>
               </div>
             </div>
