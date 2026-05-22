@@ -362,7 +362,7 @@ select:focus {
 
 .ttd-img {
   position: absolute;
-  top: 3rem;
+  top: 2rem;
   left: 50%;
   transform: translateX(-50%);
   height: 80px;
@@ -444,7 +444,7 @@ select:focus {
   .ttd-img {
     height: 9rem;
     /* Diperbesar ukurannya */
-    top: 4rem;
+    top: 3rem;
     /* Diturunkan posisinya agar center (lebih dekat ke garis hitam) */
   }
 
